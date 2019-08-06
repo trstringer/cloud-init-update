@@ -10,6 +10,6 @@ setup(
     license='MIT',
     packages=find_packages(),
     entry_points=dict(
-        console_scripts=['cloudinitupdate=src.main:main']
+        console_scripts=['cloudinitupdate=cloudinitupdate.main:main']
     )
 )
