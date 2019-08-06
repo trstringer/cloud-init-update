@@ -1,0 +1,4 @@
+Package: cloud-init-update
+Architecture: any
+Description: Update cloud-init.
+Depends: ${python3:Depends},python3-apt
