@@ -1,3 +1,11 @@
+Source: cloud-init-update
+Maintainer: Thomas Stringer <github@trstringer.com>
+Build-Depends: debhelper,dh-python,python3-all,python3-setuptools
+Section: devel
+Priority: optional
+Standards-Version: 3.9.6
+X-Python3-Version: >= 3.6
+
 Package: cloud-init-update
 Architecture: any
 Description: Update cloud-init.

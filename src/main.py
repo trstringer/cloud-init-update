@@ -1,7 +1,7 @@
 """Main code path for cloud-init-update."""
 
 import argparse
-import ubuntu
+from .ubuntu import check_and_update
 
 def main():
     """Main code execution."""
@@ -19,7 +19,7 @@ def main():
     print(f'Distro: {args.distro}')
 
     if args.distro.lower() == 'ubuntu':
-        ubuntu.check_and_update()
+        check_and_update()
 
 if __name__ == '__main__':
     main()
