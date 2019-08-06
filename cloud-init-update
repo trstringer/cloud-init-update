@@ -3,5 +3,5 @@
 SCRIPT_PATH=$(dirname "$(realpath "$0")")
 
 source "$SCRIPT_PATH/venv/bin/activate"
-$SCRIPT_PATH/venv/bin/python main.py "$@"
+$SCRIPT_PATH/venv/bin/python src/main.py "$@"
 deactivate
