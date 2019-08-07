@@ -4,3 +4,6 @@ debian/cloud-init-update.postinst.debhelper
 debian/cloud-init-update.prerm.debhelper
 debian/cloud-init-update.substvars
 debian/debhelper-build-stamp
+.pybuild/
+*.egg-info/
+debian/.debhelper/

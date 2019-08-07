@@ -15,14 +15,17 @@ def check_and_update():
         None
     """
 
-    installed_ci_version = _installed_ci_pkg_version()
+    ci_pkg_is_upgradable = _ci_pkg_is_upgradable()
 
-    if not installed_ci_version:
+    if ci_pkg_is_upgradable is None:
         raise Exception(f'{_CLOUD_INIT_PKG_NAME} not found')
 
-    print(f'Current {_CLOUD_INIT_PKG_NAME} package version is {installed_ci_version}')
+    if ci_pkg_is_upgradable:
+        print(f'{_CLOUD_INIT_PKG_NAME} is upgradable')
+    else:
+        print(f'{_CLOUD_INIT_PKG_NAME} is not upgradable')
 
-def _installed_ci_pkg_version():
+def _ci_pkg_is_upgradable():
     """
     Get the installed cloud-init package version.
 
@@ -37,10 +40,7 @@ def _installed_ci_pkg_version():
 
     for pkg in apt.Cache():
         if pkg.shortname == _CLOUD_INIT_PKG_NAME:
-            for pkg_version_key in pkg.versions.keys():
-                pkg_version = pkg.versions.get(pkg_version_key)
-                if pkg_version.is_installed:
-                    return pkg_version.version
+            return pkg.is_upgradable
 
     # This is unexpected, but in the event that cloud-init is not
     # installed on the machine we should return nothing.
