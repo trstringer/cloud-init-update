@@ -1,0 +1,10 @@
+[Unit]
+Description=cloud-init updater
+After=cloud-init-local.service
+Before=cloud-init.service
+
+[Service]
+ExecStart=/usr/bin/cloud-init-update
+
+[Install]
+WantedBy=cloud-init.target
