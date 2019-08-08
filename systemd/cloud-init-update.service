@@ -4,6 +4,7 @@ After=cloud-init-local.service
 Before=cloud-init.service
 
 [Service]
+Type=oneshot
 ExecStart=/usr/bin/cloud-init-update
 
 [Install]
