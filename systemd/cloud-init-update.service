@@ -6,6 +6,8 @@ Before=cloud-init.service
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/cloud-init-update
+RemainAfterExit=yes
 
 [Install]
+WantedBy=cloud-init.service
 WantedBy=cloud-init.target
