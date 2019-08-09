@@ -1,5 +1,6 @@
 """Update code path for Ubuntu."""
 
+import subprocess
 import apt
 
 _CLOUD_INIT_PKG_NAME = 'cloud-init'
@@ -25,5 +26,6 @@ def check_and_update():
         print(f'{_CLOUD_INIT_PKG_NAME} is upgradable. Upgrading...')
         cache[_CLOUD_INIT_PKG_NAME].mark_upgrade()
         cache.commit()
+        subprocess.run(['cloud-init', 'clean', '--logs', '--reboot'])
     else:
         print(f'{_CLOUD_INIT_PKG_NAME} is not upgradable')
