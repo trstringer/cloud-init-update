@@ -11,6 +11,8 @@ Automatically update cloud-init.
 # apt install cloud-init-update
 ```
 
+*Note*: `cloud-init-update.service` will not run automatically on installation or upgrade. Nor will it run by default. See [Configuration](#configuration) for enabling the updater.
+
 ## Configuration
 
 `cloud-init-update` is disabled by default. To enable it create a file `/etc/cloud/cloud-init-update.enabled`.
