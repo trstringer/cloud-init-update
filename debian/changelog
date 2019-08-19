@@ -1,5 +1,5 @@
-cloud-init-update (0.0.15) bionic; urgency=medium
+cloud-init-update (0.0.16) bionic; urgency=medium
 
-  * Additional release.
+  * Add the ability to enable or disable the updater.
 
  -- Thomas Stringer <thstring@microsoft.com>  Mon, 05 Aug 2019 14:47:24 -0400
