@@ -15,7 +15,7 @@ Automatically update cloud-init.
 
 ## Configuration
 
-`cloud-init-update` is disabled by default. To enable it create a file `/etc/cloud/cloud-init-update.enabled`.
+`cloud-init-update` is **disabled by default**. To enable it create a file `/etc/cloud/cloud-init-update.enabled`.
 
 ## How it works
 
